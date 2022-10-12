@@ -10,6 +10,8 @@
     <?php
     $txt = "Assignment - 01"
     ?>
+    <?php include_once 'header.php';?>
     <h1><?php echo $txt; ?></h1>
+    <?php include_once 'footer.php';?>
 </body>
 </html>
