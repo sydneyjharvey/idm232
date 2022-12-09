@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recipe_search_stylesheet.php">
     <title>Document</title>
 </head>
 <body>
@@ -44,15 +45,16 @@
 
         $search = $_GET['search'];
 
-        $raw_results = "SELECT * FROM recipe_database WHERE (`title` LIKE '%".$search."%')";
+        $raw_results = "SELECT * FROM recipe_database WHERE (`title` LIKE '%".$search."%') OR (`subtitle` LIKE '%".$search."%')";
         $results = mysqli_query($mysqli, $raw_results);
         if (!$results) {
             die ("Database query failed.");
         }
     
         while ($row = mysqli_fetch_assoc($results)) { ?>
-            <div>
+            <div class="recipeP">
                 <p><?php echo $row['title']; ?></p>
+                <p><?php echo $row['subtitle']; ?></p>
             </div>
         <?php }
 

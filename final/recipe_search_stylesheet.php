@@ -8,7 +8,3 @@ header("Content-type: text/css");
     height: 100px;
     background-color: red;
 }
-
-.test {
-    color: red;
-}
