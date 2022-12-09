@@ -34,9 +34,7 @@
 
 <body>
     <?php include_once 'header.php';?>
-    <?php include_once 'hero.php';?>
-    <?php include_once 'seasonal_recipe.php';?>
+    <?php include_once 'recipe_search.php';?>
     <?php include_once 'footer.php';?>
-    <?php include_once 'recipe_preview.php';?>
 </body>
 </html>

@@ -13,11 +13,24 @@
             <a id="h_Item1" href="https://www.w3schools.com"> Home</a>
             <a id="h_Item2" href="https://www.w3schools.com">Categories</a>
             <div class="logo" id="h_Item3"></div>
-            <form action="welcome.php" method="post" id="h_Item4">
-                Searchbar: <input type="text"><br>
-                <input type="submit">
+
+            <form method="GET" id="h_Item4">
+                <input type="text" name="search" required/>
+                <input type="submit" value="Search"/>
             </form>
+
         </div>
     </header>
+    <?php
+    if (isset($_GET["search"])) {
+        require "3-search.php";
+        if (count($results) > 0) {
+            foreach ($results as $row) {
+                echo $row['title'];
+                echo $row['subtitle'];
+            }
+        } else { echo "<div>No results found</div>"; }
+    }
+    ?>
 </body>
 </html>
