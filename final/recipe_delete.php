@@ -7,10 +7,10 @@
     <title>Delete Recipe</title>
     <?php
         $db_host = 'localhost';
-        $db_user = 'root';
-        $db_password = 'root';
-        $db_db = 'recipies';
-        $db_port = 8889;
+        $db_user = 'sydnezm0_remoteUser9104';
+        $db_password = '087149recipe';
+        $db_db = 'sydnezm0_recipies';
+        $db_port = 3306;
 
         $mysqli = new mysqli(
         $db_host,
@@ -24,13 +24,11 @@
         echo 'Error: '.$mysqli->connect_error;
         exit();
         }
-        echo 'Success: A proper connection to MySQL was made.';
-        echo '<br>';
-        echo 'Host information: '.$mysqli->host_info;
-        echo '<br>';
-        echo 'Protocol version: '.$mysqli->protocol_version;?>
+
+        ?>
 </head>
 <body>
+<?php include_once 'header.php';?>
         <form method="GET" id="recipedelete_Body">
             Title of Recipe to Delete: <input type="text" name="removed_Title" required/><br>
             <input type="submit" name="submit" value="Submit"/>
@@ -38,7 +36,6 @@
 
     <?php
         $removed_Title = ($_GET["removed_Title"]);
-        echo $removed_Title;
 
         $query = "DELETE FROM recipe_database WHERE title = '{$removed_Title}' ";
         $query .- "LIMIT 1";

@@ -6,7 +6,7 @@ $font_family = "";
 ?>
 
 header {
-    height: 20%;
+    height: 100px;
     background-color: DarkSeaGreen;
 }
 
@@ -14,26 +14,27 @@ header {
     grid-area: Home;
 }
 #h_Item2 {
-    grid-area: Categories;
+    grid-area: Add;
 }
 #h_Item3 {
-    grid-area: Logo;
+    grid-area: Edit;
 }
 #h_Item4 {
-    grid-area: Searchbar;
+    grid-area: View;
 }
-
-.logo {
-    width: auto;
-    height: auto;
-    background-color: Beige;
+#h_Item5 {
+    grid-area: Delete;
+}
+#h_Item6 {
+    grid-area: Search;
 }
 
 .header_Content {
+    height: 100px;
     display: grid;
-    grid-template-collumns: 20% 20% 20% 20% 20%;
+    grid-template-collumns: 15% 15% 15% 15% 15% 25%;
     grid-template-areas:
-        "Home Categories Logo . Searchbar";
+        "Home Add Edit View Delete Search";
     justify-content: stretch;
     justify-items: center;
     align-items: center;

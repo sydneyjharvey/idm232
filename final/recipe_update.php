@@ -7,10 +7,10 @@
     <title>Update Recipe</title>
     <?php
         $db_host = 'localhost';
-        $db_user = 'root';
-        $db_password = 'root';
-        $db_db = 'recipies';
-        $db_port = 8889;
+        $db_user = 'sydnezm0_remoteUser9104';
+        $db_password = '087149recipe';
+        $db_db = 'sydnezm0_recipies';
+        $db_port = 3306;
 
         $mysqli = new mysqli(
         $db_host,
@@ -24,13 +24,10 @@
         echo 'Error: '.$mysqli->connect_error;
         exit();
         }
-        echo 'Success: A proper connection to MySQL was made.';
-        echo '<br>';
-        echo 'Host information: '.$mysqli->host_info;
-        echo '<br>';
-        echo 'Protocol version: '.$mysqli->protocol_version;?>
+    ?>
 </head>
 <body>
+    <?php include_once 'header.php';?>
         <form method="GET" id="recipecreate_Body">
             Title of Recipe to Update: <input type="text" name="old_Title" required/><br>
             Title: <input type="text" name="new_Title"><br>
@@ -48,8 +45,6 @@
         $new_Descript = ($_GET["new_Descript"]);
         $new_Ingredients = ($_GET["new_Ingredients"]);
         $new_Instructions = ($_GET["new_Instructions"]);
-        echo $old_Title;
-        echo $new_Title;
         
         $query = "UPDATE recipe_database SET title = '{$new_Title}', subtitle = '{$new_Subtitle}', descript = '{$new_Descript}', Ingredients = '{$new_Ingredients}', Instructions = '{$new_Instructions}' WHERE title = '{$old_Title}' ";
         $result = mysqli_query($mysqli, $query);

@@ -10,11 +10,12 @@
 <body>
     <header>
         <div class="header_Content">
-            <a id="h_Item1" href="https://www.w3schools.com"> Home</a>
-            <a id="h_Item2" href="https://www.w3schools.com">Categories</a>
-            <div class="logo" id="h_Item3"></div>
-
-            <form method="GET" id="h_Item4">
+            <a id="h_Item1" href="index.php">Home</a>
+            <a id="h_Item2" href="recipe_create.php">Add Recipe</a>
+            <a id="h_Item3" href="recipe_update.php">Edit Recipe</a>
+            <a id="h_Item4" href="recipe_view.php">View Recipe</a>
+            <a id="h_Item5" href="recipe_delete.php">Delete Recipe</a>
+            <form method="GET" id="h_Item6">
                 <input type="text" name="search" required/>
                 <input type="submit" value="Search"/>
             </form>

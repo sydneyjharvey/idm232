@@ -8,10 +8,10 @@
     <title>Recipe Search</title>
     <?php
         $db_host = 'localhost';
-        $db_user = 'root';
-        $db_password = 'root';
-        $db_db = 'recipies';
-        $db_port = 8889;
+        $db_user = 'sydnezm0_remoteUser9104';
+        $db_password = '087149recipe';
+        $db_db = 'sydnezm0_recipies';
+        $db_port = 3306;
 
         $mysqli = new mysqli(
         $db_host,

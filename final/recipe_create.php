@@ -7,10 +7,10 @@
     <title>Create Recipe</title>
     <?php
         $db_host = 'localhost';
-        $db_user = 'root';
-        $db_password = 'root';
-        $db_db = 'recipies';
-        $db_port = 8889;
+        $db_user = 'sydnezm0_remoteUser9104';
+        $db_password = '087149recipe';
+        $db_db = 'sydnezm0_recipies';
+        $db_port = 3306;
 
         $mysqli = new mysqli(
         $db_host,
@@ -24,13 +24,10 @@
         echo 'Error: '.$mysqli->connect_error;
         exit();
         }
-        echo 'Success: A proper connection to MySQL was made.';
-        echo '<br>';
-        echo 'Host information: '.$mysqli->host_info;
-        echo '<br>';
-        echo 'Protocol version: '.$mysqli->protocol_version;?>
+        ?>
 </head>
 <body>
+    <?php include_once 'header.php';?>
         <form method="GET" id="recipecreate_Body">
             Title: <input type="text" name="new_Title" required/><br>
             Subtitle: <input type="text" name="new_Subtitle" required/><br>
@@ -46,7 +43,6 @@
         $new_Descript = ($_GET["new_Descript"]);
         $new_Ingredients = ($_GET["new_Ingredients"]);
         $new_Instructions = ($_GET["new_Instructions"]);
-        echo $new_Title;
         $sql = "INSERT INTO recipe_database (title, subtitle, descript, Ingredients, Instructions) VALUES ('{$new_Title}', '{$new_Subtitle}', '{$new_Descript}', '{$new_Ingredients}', '{$new_Instructions}')";
 
         if (mysqli_query($mysqli, $sql)) {

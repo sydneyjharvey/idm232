@@ -5,16 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="recipe_search_stylesheet.php">
-    <title>Document</title>
+    <title>Recipe Search Function</title>
 </head>
 <body>
 
 <?php
+        //$db_host = 'localhost';
+        //$db_user = 'root';
+        //$db_password = 'root';
+        //$db_db = 'recipies';
+        //$db_port = 8889;
+
         $db_host = 'localhost';
-        $db_user = 'root';
-        $db_password = 'root';
-        $db_db = 'recipies';
-        $db_port = 8889;
+        $db_user = 'sydnezm0_remoteUser9104';
+        $db_password = '087149recipe';
+        $db_db = 'sydnezm0_recipies';
+        $db_port = 3306;
 
         $mysqli = new mysqli(
         $db_host,
@@ -29,18 +35,13 @@
         echo 'Error: '.$mysqli->connect_error;
         exit();
         }
-        echo 'Success: A proper connection to MySQL was made.';
         echo '<br>';
-        echo 'Host information: '.$mysqli->host_info;
+        echo 'Search Results:';
+        //echo 'Success: A proper connection to MySQL was made.';
         echo '<br>';
-        echo 'Protocol version: '.$mysqli->protocol_version;
-        
-
-//        $stmt = $mysqli->prepare("SELECT * FROM `recipe_database` WHERE `title` LIKE ? OR `subtitle` LIKE ?");
-//        $stmt->execute([
-//            "%".$_GET['search']."%", "%".$_GET["search"]."%"
-//        ]);
-//        $results = $stmt->fetchAll();
+        //echo 'Host information: '.$mysqli->host_info;
+        //echo '<br>';
+        //echo 'Protocol version: '.$mysqli->protocol_version;
         
 
         $search = $_GET['search'];
@@ -53,8 +54,11 @@
     
         while ($row = mysqli_fetch_assoc($results)) { ?>
             <div class="recipeP">
-                <p><?php echo $row['title']; ?></p>
-                <p><?php echo $row['subtitle']; ?></p>
+                <div class="recipe_Content">
+                    <br>
+                    <p><?php echo $row['title']; ?></p>
+                    <p><?php echo $row['subtitle']; ?></p>
+                </div>
             </div>
         <?php }
 
