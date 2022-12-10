@@ -55,7 +55,7 @@
             die('Database query failed. ' . mysqli_error($connection));
         }
 
-        mysqli_close($connection);
+        mysqli_close($mysqli);
     ?>
 </body>
 </html>

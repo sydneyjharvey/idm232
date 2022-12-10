@@ -36,9 +36,7 @@
 
     <?php
         $removed_Title = ($_GET["removed_Title"]);
-
         $query = "DELETE FROM recipe_database WHERE title = '{$removed_Title}' ";
-        $query .- "LIMIT 1";
 
         $result = mysqli_query($mysqli, $query);
 
@@ -48,7 +46,7 @@
             die ("Database query failed. " . mysqli_error($connection));
         }
 
-        mysqli_close($connection);
+        mysqli_close($mysqli);
     ?>
 </body>
 </html>

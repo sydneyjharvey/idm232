@@ -44,6 +44,8 @@
             <p class="recipeP_Title" ><?php echo $row['title']; ?></p>
             <p class="recipeP_Title2" ><?php echo $row['subtitle']; ?></p>
         </div>
-    <?php } ?>
+    <?php }
+    mysqli_close($mysqli);
+    ?>
 </body>
 </html>

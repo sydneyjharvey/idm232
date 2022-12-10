@@ -51,7 +51,7 @@
             echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
         }
 
-        mysqli_close($connection);
+        mysqli_close($mysqli);
     ?>
 </body>
 </html>
