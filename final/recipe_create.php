@@ -41,26 +41,13 @@
         </form>
 
     <?php
-        if (isset($_GET["submit"])) {
-            echo $_GET["new_Title"];
-          }
-        else {
-            echo "no";
-        }
-        
         $new_Title = ($_GET["new_Title"]);
         $new_Subtitle = ($_GET["new_Subtitle"]);
         $new_Descript = ($_GET["new_Descript"]);
         $new_Ingredients = ($_GET["new_Ingredients"]);
         $new_Instructions = ($_GET["new_Instructions"]);
-
-        $new_Title = mysqli_real_escape_string($connection, $new_Title);
-        $new_Subtitle = mysqli_real_escape_string($connection, $new_Subtitle);
-        $new_Descript = mysqli_real_escape_string($connection, $new_Descript);
-        $new_Ingredients = mysqli_real_escape_string($connection, $new_Ingredients);
-        $new_Instructions = mysqli_real_escape_string($connection, $new_Instructions);
-        // '{$new_Title}', '{$new_Subtitle}', '{$new_Descript}', '{$new_Ingredients}', '{$new_Instructions}'
-        $sql = "INSERT INTO recipe_database (title, subtitle, descript, Ingredients, Instructions) VALUES ('a', 'b', 'c', 'd', 'e')";
+        echo $new_Title;
+        $sql = "INSERT INTO recipe_database (title, subtitle, descript, Ingredients, Instructions) VALUES ('{$new_Title}', '{$new_Subtitle}', '{$new_Descript}', '{$new_Ingredients}', '{$new_Instructions}')";
 
         if (mysqli_query($mysqli, $sql)) {
             echo "New record created successfully";
